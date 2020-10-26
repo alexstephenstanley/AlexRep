@@ -1,4 +1,4 @@
-package SeleniumPractice;
+	package SeleniumPractice;
 
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
@@ -24,23 +24,23 @@ public class Assignment2 {
 			driver.findElementByLinkText("Find Leads").click();
 			driver.findElementByXPath("(//span[text()='Advanced']/following::input)[2]").sendKeys("Alex");
 			driver.findElementByXPath("//button[contains(text(),'Find Leads')]").click();
-			driver.findElementByXPath("//a[@id='ext-gen898']").click();
-			driver.getTitle();
+			Thread.sleep(5000);
+			driver.findElementByXPath("//div[@class='x-grid3-cell-inner x-grid3-col-firstName']//a").click();
+			System.out.println(driver.getTitle());
 			driver.findElementByLinkText("Edit").click();
 			driver.findElementByXPath("(//input[@name='companyName'])[2]").clear();
-			driver.findElementByXPath("(//input[@name='companyName'])[2]").sendKeys("CTS");
-			String st1 = driver.findElementByXPath("(//input[@name='companyName'])[2]").getText();
-			driver.findElementByXPath("//input[@name='submitButton']").click();
-			String St2 = driver.findElementByXPath("(//span[@class='tabletext'])[3]").getText();
-			if (st1 == St2) {
-				System.out.println("Updated text is correct");
+			driver.findElementByXPath("(//input[@name='companyName'])[2]").sendKeys("HCL");
+			driver.findElementByXPath("//input[@class='smallSubmit']").click();
+			System.out.println("Company name updated");			
+			if (driver.findElementByXPath("(//span[@class='tabletext'])[3]").isDisplayed()) {
+				System.out.println(driver.findElementByXPath("(//span[@class='tabletext'])[3]").getText());
 			}
-				
+			
 			Thread.sleep(5000);
 			driver.close();
 			
 		} catch (Exception e) {
-			System.out.println("Unexpected");
+			System.out.println(e);
 		}
 		
 		
@@ -50,18 +50,4 @@ public class Assignment2 {
 		
 		
 		
-
-		
-				
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	
