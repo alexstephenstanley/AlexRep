@@ -1,0 +1,56 @@
+  package ClassInheritance;
+
+public class MethodOverload {
+
+	public int add (int num1 , int num2) {
+	 int add = (num1 + num2);
+	return add;
+		
+	}
+	public int add (int num3, int num4, int num5) {
+		int add = (num3 + num4+ num5);
+		return add;
+	}
+		
+	public int multiply (int num1, int num2) {
+		int multiply = num1 * num2;
+		return multiply;
+	}
+	
+	public double multiply (int num1, double num2) {
+		double multiply = num1 * num2;
+		return multiply;
+	}
+	
+	public int subtract (int num1, int num2) {
+		int subtract = num1 - num2;
+		return subtract;
+	}
+	public double subtract (int num1, double num2) {
+		double subtract = num1 - num2;
+		return subtract;
+	}
+	
+	
+	public static void main(String[] args) {
+		MethodOverload obj = new MethodOverload();
+		int result = obj.add(3,4);
+		System.out.println(result);
+		
+		int result1 = obj.add(5, 6, 7);
+		System.out.println(result1);
+		
+		int res2 = obj.multiply(3, 4);
+		System.out.println(res2);
+		
+		int res3 = obj.multiply(555, 4567889);
+		System.out.println(res3);
+		
+		int res4 = obj.subtract(4, 6);
+		System.out.println(res4);
+		
+		
+	}
+
+}
+
